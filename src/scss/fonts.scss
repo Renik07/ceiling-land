@@ -1,0 +1,15 @@
+@font-face{
+	font-family: "Gilroy";
+	font-display: swap;
+	src: url("../fonts/gilroy-regular.woff2") format("woff2"), url("../fonts/gilroy-regular.woff") format("woff");
+	font-weight: 400;
+	font-style: italic;
+}
+
+@font-face{
+	font-family: "Druk Cyr";
+	font-display: swap;
+	src: url("../fonts/drukcyr-medium.woff2") format("woff2"), url("../fonts/drukcyr-medium.woff") format("woff");
+	font-weight: 500;
+	font-style: italic;
+}

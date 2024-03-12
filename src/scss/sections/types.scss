@@ -1,0 +1,231 @@
+.types {
+	&__container {
+		padding-bottom: 100px;
+	}
+	&__content {
+		// max-width: 1155px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 10px;
+		padding-bottom: 50px;
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+	&__block {
+		// max-width: 400px;
+	}
+	&__title {
+		text-align: center;
+		font-family: var(--second-family);
+		font-weight: 400;
+		// font-size: 55px;
+		line-height: 101%;
+		text-transform: uppercase;
+		background: linear-gradient(150deg, #2763fd 0%, #fff 99.99%, #ed730e 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		margin-bottom: 40px;
+	}
+	&__subtitle {
+		font-family: var(--second-family);
+		font-weight: 400;
+		text-align: center;
+		font-size: 45px;
+		line-height: 101%;
+		color: #fff;
+		opacity: 0.7;
+		margin-bottom: 20px;
+	}
+	&__list {
+		// max-width: 770px;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	&__item {
+		position: relative;
+		max-width: 385px;
+		padding: 15px 30px;
+		border: 1px solid rgba(255, 255, 255, 0.25);
+		transition: 0.3s all;
+		&:hover {
+			border: 1px solid #fff;
+		}
+		&::after {
+			display: none;
+			position: absolute;
+			content: "";
+			top: 20px;
+			right: 20px;
+			background: url("../img/icons/touch.svg") center center no-repeat;
+			width: 40px;
+			height: 40px;
+		}
+	}
+	&__item-img {
+		max-width: 327px;
+		width: 100%;
+		height: 256px;
+		margin-bottom: 15px;
+		overflow: hidden;
+		img {
+			max-width: 100%;
+			height: auto;
+			object-fit: contain;
+		}
+	}
+	&__item-title {
+		font-family: var(--second-family);
+		font-weight: 400;
+		font-size: 28px;
+		line-height: 101%;
+		background: linear-gradient(150deg, #f6a0a2 0%, #fe7d11 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+	&__popup {
+		position: fixed;
+		z-index: 100;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		background-color: rgba(22, 22, 22, 0.9);
+		overflow-y: scroll;
+		opacity: 0;
+		visibility: hidden;
+		display: none;
+		transition: 0.3s all;
+		&.open-popup {
+			display: block;
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+	&__popup-container {
+		position: relative;
+		width: 90%;
+		max-width: 900px;
+		margin: 4em auto;
+		background: #fff;
+		color: #000;
+		padding: 15px;
+		padding-top: 40px;
+		border-radius: 10px;
+		p {
+			font-family: var(--second-family);
+			font-weight: 400;
+			font-size: clamp(16px, 3vw, 26px);
+			line-height: 101%;
+			margin-bottom: 30px;
+		}
+	}
+	&__popup-close {
+		display: block;
+		position: absolute;
+		top: 5px;
+		right: 10px;
+	}
+	&__popup-images {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+	&__popup-img {
+		flex: 0 1 50%;
+		overflow: hidden;
+		& img {
+			display: block;
+			object-fit: cover;
+			max-width: 100%;
+			height: auto;
+			border-radius: 5px;
+		}
+	}
+	&__banner {
+		display: block;
+		position: relative;
+		span {
+			position: absolute;
+			top: 0;
+			left: 0;
+			font-size: 16px;
+			font-weight: 400;
+		}
+		img {
+			width: 100%;
+		}
+		&--mob {
+			display: none;
+		}
+	}
+}
+
+@media screen and (max-width: 1330px) {
+	.types {
+		&__subtitle {
+			font-size: calc(24px + (45 - 24) * ((100vw - 320px) / (1920 - 320)));
+		}
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.types {
+		&__popup-container {
+			p {
+				margin-bottom: 15px;
+			}
+		}
+		&__popup-images {
+			flex-direction: column;
+		}
+		&__container {
+			padding-bottom: 40px;
+		}
+		&__content {
+			display: block;
+			gap: 0;
+			padding-bottom: 20px;
+		}
+		&__list {
+			flex-wrap: initial;
+			justify-content: initial;
+			padding-bottom: 40px;
+		}
+		&__item {
+			max-width: auto;
+			padding: 15px;
+			&::after {
+				display: block;
+			}
+		}
+		&__pagination {
+			& .swiper-pagination-bullet {
+				background: $white;
+			}
+		}
+		&__item-img {
+			max-width: 100% !important;
+			height: calc(170px + (290 - 170) * ((100vw - 320px) / (500 - 320)));
+		}
+		&__item-title {
+			font-size: 17px;
+		}
+		&__banner {
+			&--desk {
+				display: none;
+			}
+			&--mob {
+				display: block;
+			}
+			span {
+				font-size: calc(11px + (16 - 11) * ((100vw - 320px) / (500 - 320)));
+			}
+		}
+	}
+}

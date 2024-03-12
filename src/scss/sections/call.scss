@@ -1,0 +1,150 @@
+.call {
+	&__container {
+		border-top: 1px solid $white;
+		border-bottom: 1px solid $white;
+		padding-top: 45px;
+		padding-bottom: 20px;
+	}
+	&__content {
+		max-width: 1100px;
+		width: 100%;
+		margin: 0 auto;
+	}
+	&__title {
+		font-family: var(--second-family);
+		font-weight: 400;
+		font-size: 45px;
+		line-height: 101%;
+		text-align: center;
+		background: linear-gradient(150deg, #2763fd 0%, #fff 99.99%, #ed730e 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+	&__text {
+		font-family: var(--font-family);
+		font-weight: 300;
+		font-size: 25px;
+		text-align: center;
+		color: $text-white;
+		margin-bottom: 45px;
+	}
+	&__form {
+		display: flex;
+		// justify-content: space-between;
+		justify-content: center;
+		// flex-wrap: wrap;
+		gap: 15px;
+	}
+	&__input {
+		flex: 0 1 30%;
+		display: block;
+		background: $input-dark;
+		color: $text-white;
+		border: none;
+		padding: 30px 20px;
+		font-family: var(--font-family);
+		font-weight: 300;
+		font-size: 25px;
+		&::placeholder {
+			color: $text-white;
+			font-family: var(--font-family);
+			font-weight: 300;
+			font-size: 25px;
+			opacity: 0.5;
+		}
+	}
+	&__input-name {
+		border-top-left-radius: 15px;
+		border-bottom-left-radius: 15px;
+	}
+	&__input-tel {
+		border-top-right-radius: 15px;
+		border-bottom-right-radius: 15px;
+	}
+	&__btn {
+		cursor: pointer;
+		flex: 0 1 30%;
+	}
+	&__response {
+		text-align: center;
+		font-size: 18px;
+		margin-top: 15px;
+		transition: 0.3s opacity;
+		opacity: 0;
+		&.call__response--success {
+			color: rgb(122, 235, 122);
+			opacity: 1;
+		}
+		&.call__response--error {
+			color: rgb(245, 134, 83);
+			opacity: 1;
+		}
+	}
+}
+
+@media screen and (max-width: 1330px) {
+	.call {
+		&__title {
+			font-size: calc(30px + (45 - 30) * ((100vw - 320px) / (1330 - 320)));
+		}
+		&__text {
+			font-size: calc(16px + (25 - 16) * ((100vw - 320px) / (1330 - 320)));
+		}
+	}
+}
+
+@media screen and (max-width: 1230px) {
+	.call {
+		&__form {
+			flex-wrap: wrap;
+		}
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.call {
+		&__btn {
+			padding: 25px 35px;
+			font-size: 25px;
+		}
+	}
+}
+
+@media screen and (max-width: 713px) {
+	.call {
+		&__form {
+		}
+		&__input {
+			flex: 0 1 100%;
+			border-radius: 15px;
+		}
+		&__btn {
+			flex: 0 1 100%;
+		}
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.call {
+		&__title {
+			margin-bottom: 20px;
+		}
+		&__input {
+			padding: 15px;
+			font-size: 18px;
+			border-radius: 10px;
+			&::placeholder {
+				font-size: 18px;
+			}
+		}
+		&__btn {
+			padding: 15px;
+			font-size: 20px;
+		}
+		&__response {
+			font-size: 16px;
+			margin-top: 10px;
+		}
+	}
+}
